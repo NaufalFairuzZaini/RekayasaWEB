@@ -24,4 +24,10 @@ $router->group(['prefix' => 'api'], function () use ($router) {
  $router->post('wisata', ['uses' => 'WisataController@create']);
  $router->delete('wisata/{id}', ['uses' => 'WisataController@delete']);
  $router->put('wisata/{id}', ['uses' => 'WisataController@update']);
+
+ // jwt-auth
+ $router->post('login', ['uses' => 'AuthController@login']);
+ $router->post('logout', ['uses' => 'AuthController@logout']);
+ $router->post('refresh', ['uses' => 'AuthController@refresh']);
+ $router->post('user-profile', ['uses' => 'AuthController@me']);
 });
